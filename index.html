@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Personal Website</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header and Navigation -->
+  <header>
+    <div class="container">
+      <ul class="menu">
+        <li><a href="#education">Education</a></li>
+        <li><a href="#work">Work Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+  
+  <!-- Profile Section -->
+  <section id="profile">
+    <div class="container">
+      <div class="profile">
+        <div class="profile-img">
+          <img src="profile/3.svg" alt="Ivanna Job" style="width: 250px; height: auto; max-width: 100%; border-radius: 50%;">
+        </div>
+        <div class="profile-info">
+          <h1>Ivanna Job</h1>
+          <p class="summary">
+            Ivanna Job is a dedicated Business Administration student with strong analytical skills, demonstrated through internships at Allegheny Energy and Merrill Lynch. She has leadership experience as Assistant Treasurer of Sigma Alpha Epsilon Fraternity and is a member of the Lambda Sigma Honor Society. Ivanna is also a Teaching Assistant for Principles of Economics at Carnegie Mellon University.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Education Section -->
+  <section id="education">
+    <div class="container">
+      <h2 class="section-title">Education</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>Bachelor of Science in Business Administration</h3>
+          <span>Graduation Date: May 2024</span>
+          <p>Carnegie Mellon University</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Work Experience Section -->
+  <section id="work">
+    <div class="container">
+      <h2 class="section-title">Work Experience</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>Regulation and Rates Summer Intern</h3>
+          <span>Allegheny Energy, June – Aug. 2023</span>
+          <p>Created Excel programs to be used in conjunction with real-time pricing schedules. Analyzed charts and information for a presentation for the Board of Directors. Hired as the first freshman intern for Allegheny Energy.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Volunteer Summer Assistant</h3>
+          <span>Merrill Lynch, The Calvert and Oliva Group, July 20xx</span>
+          <p>Prepared materials for client meetings, including stock research and diversification data. Researched potential customers and designed detailed Excel spreadsheets with the information.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-grid">
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              Sigma Alpha Epsilon Fraternity
+            </div>
+            <div class="card-back">
+              <h3>Sigma Alpha Epsilon Fraternity</h3>
+              <p>Manage the financial fundraising and a budget of $5,000 for the fraternity. Collect fraternity dues from all members and deposit them into appropriate accounts.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container contact">
+      <h2>Contact Me</h2>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/ivanna-job" target="_blank" aria-label="LinkedIn">LinkedIn</a>
+        <a href="mailto:sophomore@cmu.edu" aria-label="Email">Email</a>
+        <a href="tel:+14125551212" aria-label="Phone">Phone</a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Ivanna Job. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  <!-- JavaScript for extra interactivity -->
+  <script>
+    // Smooth scroll for internal links (if browser doesn't support CSS scroll-behavior)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if(target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+    
+    // Intersection Observer for unfolding timeline items on scroll
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
+    
+    timelineItems.forEach(item => {
+      observer.observe(item);
+    });
+  </script>
+</body>
+</html>
